@@ -6,8 +6,8 @@ const multer = require('multer')
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage })
 
-
-
+router.use('/usersReg', require('./usersReg.js'));
+router.use('/usersEsp', require('./userEsp.js'));
 // Crear paciente
 router.post('/pac', upload.fields([{ name: 'foto' }, { name: 'cert' }]), pacienteController.guardarPaciente);
 

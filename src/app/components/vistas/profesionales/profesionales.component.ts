@@ -12,6 +12,7 @@ export class ProfesionalesComponent {
 
   loading = true;
   loader = true;
+  errorLoading: boolean = false;
 
   ngOnInit(): void {
     this.obtenerPacientes();
@@ -31,10 +32,13 @@ export class ProfesionalesComponent {
       console.log(data);
       this.listPaciente = data;
       this.loading = false;
-    },error => {
+    }, error => {
       console.log(error);
-    })
+      this.loading = true;
+      this.errorLoading = true; 
+    });
   }
+  
 
   getBufferImageSrc(buffer: ArrayBuffer): SafeUrl {
     const blob = new Blob([buffer]);

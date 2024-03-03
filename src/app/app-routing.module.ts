@@ -6,16 +6,17 @@ import { ProfesionalesComponent } from './components/vistas/profesionales/profes
 import { PreciosComponent } from './components/vistas/precios/precios.component';
 import { LoginComponent } from './components/formularios/login/login.component';
 import { SignupComponent } from './components/formularios/signup/signup.component';
+import { NotFoundComponent } from './components/complementos/not-found/not-found.component';
 
 
 const routes: Routes = [
-  {path: '', component: IndexComponent},
-  {path: 'registrarPaciente', component: RegistrarPacientesComponent},
-  {path: 'verProfesionales', component: ProfesionalesComponent},
-  {path: 'precios', component: PreciosComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: '**',redirectTo: '',pathMatch: 'full'}
+  {path: 'Inicio', component: IndexComponent},
+  {path: 'RegistrarPaciente', component: RegistrarPacientesComponent},
+  {path: 'VerProfesionales', component: ProfesionalesComponent},
+  {path: 'Precios', component: PreciosComponent},
+  {path: 'Login', component: LoginComponent},
+  {path: 'Signup', component: SignupComponent},
+  {path: '**',component: NotFoundComponent}
 ];
 
 @NgModule({

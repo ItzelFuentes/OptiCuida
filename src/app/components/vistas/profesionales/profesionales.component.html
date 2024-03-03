@@ -12,10 +12,10 @@
                 <div class="card-body text-center">
                     <span class="titulo">Oftalmólogos</span>
                     <p></p>
-                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status" *ngIf="loading">
+                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status" *ngIf="loading && !errorLoading">
                         <span class="visually-hidden">Loading...</span>
                     </div>
-                    <table *ngIf="listPaciente.length > 0 && !loading" class="table table-striped mt-3">
+                    <table *ngIf="listPaciente.length > 0 && !errorLoading" class="table table-striped mt-3">
                         <thead>
                             <tr>
                                 <th scope="col">Matrícula</th>
@@ -42,6 +42,10 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="loadError" *ngIf="errorLoading">
+                        <p>Ooops... Hubo un error al cargar los datos de nuestros profesionales :(. Por favor, inténtalo de nuevo más tarde.</p>
+                        <img src="./../../../../assets/img/closed.png" alt="">
+                      </div>
                 </div>
             </div>
         </div>

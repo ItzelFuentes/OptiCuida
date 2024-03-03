@@ -15,8 +15,10 @@ import { IndexComponent } from './components/vistas/index/index.component';
 import { NavbarComponent } from './components/complementos/navbar/navbar.component';
 import { FooterComponent } from './components/complementos/footer/footer.component';
 import { ProfesionalesComponent } from './components/vistas/profesionales/profesionales.component';
-import { PreciosComponent } from './components/vistas/precios/precios.component'
+import { PreciosComponent } from './components/vistas/precios/precios.component';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { NotFoundComponent } from './components/complementos/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,17 +30,19 @@ import { NgxPayPalModule } from 'ngx-paypal';
     NavbarComponent,
     FooterComponent,
     ProfesionalesComponent,
-    PreciosComponent
+    PreciosComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
+    NgxPayPalModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPayPalModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SweetAlert2Module
+    SweetAlert2Module,
+    BreadcrumbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

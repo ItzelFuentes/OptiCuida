@@ -1,0 +1,14 @@
+<div class="spinner-container" *ngIf="loader">
+    <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<div class="error-container" *ngIf="!loader">
+    <div class="error-content">
+        <h1>404</h1>
+        <h2>Página no encontrada</h2>
+        <p>Lo sentimos, la página que estás buscando no se pudo encontrar.</p>
+        <a href="/Inicio" class="btn btn-primary">Ir a la página de inicio</a>
+    </div>
+</div>

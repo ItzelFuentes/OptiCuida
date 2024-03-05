@@ -9,6 +9,8 @@ import { SignupComponent } from './components/formularios/signup/signup.componen
 import { NotFoundComponent } from './components/complementos/not-found/not-found.component';
 import { RoleGuard } from './components/complementos/RoleGuard';
 import { DeniedComponent } from './components/complementos/denied/denied.component';
+import { MapaComponent } from './components/vistas/mapa/mapa.component';
+import { NosotrosComponent } from './components/vistas/nosotros/nosotros.component';
 
 const routes: Routes = [
   {path: 'Inicio', component: IndexComponent},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path: 'Login', component: LoginComponent},
   {path: 'Signup', component: SignupComponent},
   {path: 'denied', component: DeniedComponent},
+  {path: 'Mapa', component: MapaComponent},
+  {path: 'Nosotros', component: NosotrosComponent},
   {path: '**',component: NotFoundComponent}
 ];
 

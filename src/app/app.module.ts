@@ -21,7 +21,12 @@ import { NgxPayPalModule } from 'ngx-paypal';
 import { NotFoundComponent } from './components/complementos/not-found/not-found.component';
 import { RoleGuard } from './components/complementos/RoleGuard';
 import { DeniedComponent } from './components/complementos/denied/denied.component';
-
+import { SearchComponent } from './components/complementos/search/search.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MapaComponent } from './components/vistas/mapa/mapa.component';
+import { NosotrosComponent } from './components/vistas/nosotros/nosotros.component';
 
 
 @NgModule({
@@ -36,7 +41,10 @@ import { DeniedComponent } from './components/complementos/denied/denied.compone
     ProfesionalesComponent,
     PreciosComponent,
     NotFoundComponent,
-    DeniedComponent
+    DeniedComponent,
+    SearchComponent,
+    MapaComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,10 @@ import { DeniedComponent } from './components/complementos/denied/denied.compone
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     SweetAlert2Module,
-    BreadcrumbModule
+    BreadcrumbModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [RoleGuard],
   bootstrap: [AppComponent]

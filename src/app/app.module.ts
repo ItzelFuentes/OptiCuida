@@ -19,6 +19,10 @@ import { PreciosComponent } from './components/vistas/precios/precios.component'
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { NotFoundComponent } from './components/complementos/not-found/not-found.component';
+import { RoleGuard } from './components/complementos/RoleGuard';
+import { DeniedComponent } from './components/complementos/denied/denied.component';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { NotFoundComponent } from './components/complementos/not-found/not-found
     FooterComponent,
     ProfesionalesComponent,
     PreciosComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DeniedComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,7 @@ import { NotFoundComponent } from './components/complementos/not-found/not-found
     SweetAlert2Module,
     BreadcrumbModule
   ],
-  providers: [],
+  providers: [RoleGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,15 @@
-<p>signup works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div>
+        <label class="mb-3">Username</label>
+        <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div>
+        <label class="mb-3">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    <div>
+        <label class="mb-3">Password</label>
+        <input type="text" class="form-control" formControlName="password">
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-info">
+</form>

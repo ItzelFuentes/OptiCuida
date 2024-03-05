@@ -7,15 +7,17 @@ import { PreciosComponent } from './components/vistas/precios/precios.component'
 import { LoginComponent } from './components/formularios/login/login.component';
 import { SignupComponent } from './components/formularios/signup/signup.component';
 import { NotFoundComponent } from './components/complementos/not-found/not-found.component';
-
+import { RoleGuard } from './components/complementos/RoleGuard';
+import { DeniedComponent } from './components/complementos/denied/denied.component';
 
 const routes: Routes = [
   {path: 'Inicio', component: IndexComponent},
   {path: 'RegistrarPaciente', component: RegistrarPacientesComponent},
-  {path: 'VerProfesionales', component: ProfesionalesComponent},
+  {path: 'VerProfesionales', canActivate: [RoleGuard], data: { 'expectedRoles': ['admin'] }, component: ProfesionalesComponent},
   {path: 'Precios', component: PreciosComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Signup', component: SignupComponent},
+  {path: 'denied', component: DeniedComponent},
   {path: '**',component: NotFoundComponent}
 ];
 

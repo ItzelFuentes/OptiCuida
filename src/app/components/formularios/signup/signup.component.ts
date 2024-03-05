@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PacienteServices } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-signup',
@@ -6,5 +9,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
+  formulario: FormGroup;
+  pacienteService = inject(PacienteServices)
+  router = inject(Router);
+
+  constructor(){
+    this.formulario = new FormGroup({
+      username: new FormControl(),
+      email: new FormControl(),
+      password: new FormControl()
+    })
+  }
+
+  async onSubmit(){
+    const response = await this.pacienteService.singup(this.formulario.value);
+    this.router.navigate(['/Inicio']);
+  }
 
 }

@@ -27,7 +27,7 @@ export class NavbarComponent {
   }
 
   redirectToLogin(): void {
-    this.router.navigate(['/Login']); // Cambia '/login' por la ruta adecuada
+    this.router.navigate(['/Login']);
   }
   ngOnInit():void {
     setTimeout(()=>{
@@ -35,6 +35,10 @@ export class NavbarComponent {
     }, 2000);
     this.isLoggedIn = localStorage.getItem('token') !== null;
     this.username = localStorage.getItem('username');
+  }
+
+  handleSearch(value: String){
+    console.log(value)
   }
 
 }

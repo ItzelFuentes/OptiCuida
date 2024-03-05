@@ -18,10 +18,16 @@
                     <a class="nav-link active" aria-current="page" href="/Inicio">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/VerProfesionales">Servicios</a>
+                    <a class="nav-link buscable" href="/VerProfesionales">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Precios">Planes</a>
+                    <a class="nav-link buscable" href="/Nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link buscable" href="/Precios">Planes</a>
+                </li>
+                <li class="nav-item">
+                    <app-search (search)="handleSearch($event)"></app-search>
                 </li>
                 <li class="nav-item dropdown"*ngIf="isLoggedIn">
                     <a class="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false"> {{username}}</a>

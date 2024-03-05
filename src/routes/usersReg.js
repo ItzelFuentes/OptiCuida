@@ -32,7 +32,9 @@ router.post('/loginReg', async (req, res) =>{
         }
 
         res.json({succes: 'Login correcto', 
-        token: createToken(user)
+        token: createToken(user),
+        username: user.username,
+        userRole: user.role
         });
 });
 
@@ -44,5 +46,9 @@ function createToken(user){
     }
     return jwt.sign(payload, 'si jala');
 }
+
+router.post('/logout', (req, res) => {
+    res.json({ success: 'Deslogueo exitoso' });
+});
 
 module.exports = router;

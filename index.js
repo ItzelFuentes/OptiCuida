@@ -13,9 +13,7 @@ const corsOptions = {
     optionsSuccessStatus: 204,
   };
   
-console.log('Before CORS middleware');
 app.use(cors(corsOptions));
-console.log('After CORS middleware');
 app.use(express.json());
 app.use('/api/', aspiranteRouters);
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+</head>
+<body>
+    <div class="spinner-container" *ngIf="loader">
+        <div
+          class="spinner-grow text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      
+      <h1 *ngIf="!loader">Mapa</h1>
+      <ol *ngIf="!loader">
+        <li><a href="/Inicio">Inicio</a></li>
+        <li><a href="/VerProfesionales">Servcios</a></li>
+        <li><a href="/Nosotros">Nosotros</a></li>
+        <li><a href="/Precios">Planes</a></li>
+      </ol>
+      
+</body>
+</html>

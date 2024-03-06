@@ -1,7 +1,7 @@
 let myButton;
 
 // Esperar hasta que el documento HTML y todos los recursos asociados se hayan cargado completamente
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 	myButton = document.getElementById("myBtn");
 
 	window.onscroll = function () {
@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	};
 
 	if (myButton) {
-        myButton.addEventListener("click", function() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-    }
+		myButton.addEventListener("click", function () {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth"
+			});
+		});
+	}
 
 });
 
@@ -134,3 +134,4 @@ function topFunction() {
 	document.body.scrollTop = 0; // for Safari
 	document.documentElement.scrollTop = 0; // for Chrome, Firefox, IE and Opera
 }
+

@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class NosotrosComponent {
 
-  loader = false;
+  loader = true;
+
+  ngOnInit():void {
+    setTimeout(()=>{
+      this.loader = false;
+    }, 2000);
+  }
 
 }

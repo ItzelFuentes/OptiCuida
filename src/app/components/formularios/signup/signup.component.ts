@@ -13,6 +13,13 @@ export class SignupComponent {
   formulario: FormGroup;
   pacienteService = inject(PacienteServices)
   router = inject(Router);
+  loader = true;
+
+  ngOnInit():void {
+    setTimeout(()=>{
+      this.loader = false;
+    }, 2000);
+  }
 
   constructor(){
     this.formulario = new FormGroup({

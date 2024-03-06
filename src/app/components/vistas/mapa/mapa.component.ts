@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./mapa.component.css']
 })
 export class MapaComponent {
+  loader = true;
 
+  ngOnInit():void {
+    setTimeout(()=>{
+      this.loader = false;
+    }, 2000);
+  }
 }

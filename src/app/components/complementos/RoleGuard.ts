@@ -25,7 +25,7 @@ export class RoleGuard implements CanActivate {
     // Verificar si el usuario tiene al menos uno de los roles permitidos
     if (!userRole || !expectedRoles.includes(userRole)) {
       // Si el usuario no tiene ningún rol permitido, redirigirlo a una página de acceso denegado o a otra ruta
-      this.router.navigate(['/denied']); // Cambia '/denied' por la ruta adecuada
+      this.router.navigate(['/Denegado']); // Cambia '/denied' por la ruta adecuada
       return of(false);
     }
     

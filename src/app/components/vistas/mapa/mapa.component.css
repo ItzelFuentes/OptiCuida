@@ -17,3 +17,7 @@ a:hover {
 body {
     margin-left: 14%; 
 }
+
+h1 {
+    width: 20px;
+}

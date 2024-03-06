@@ -37,8 +37,12 @@ export class NavbarComponent {
     this.username = localStorage.getItem('username');
   }
 
-  handleSearch(value: String){
-    console.log(value)
+  handleSearch(event: any): void {
+    const searchTerm = (event.target as HTMLInputElement)?.value;
+    if (searchTerm) {
+      // Tu lógica de búsqueda aquí
+      console.log(searchTerm);
+    }
   }
 
 }

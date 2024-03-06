@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PacienteServices } from 'src/app/services/paciente.service';
@@ -11,6 +11,13 @@ import { PacienteServices } from 'src/app/services/paciente.service';
 export class LoginComponent {
 
   formulario: FormGroup;
+  loader = true;
+
+  ngOnInit():void {
+    setTimeout(()=>{
+      this.loader = false;
+    }, 2000);
+  }
 
   pacienteService = inject(PacienteServices);
   router = inject(Router);

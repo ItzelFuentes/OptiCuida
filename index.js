@@ -7,7 +7,7 @@ const port = process.env.PORT || 9000;
 const cors = require("cors");
 
 const corsOptions = {
-    origin: 'https://opticuida.onrender.com',
+    origin: 'https://opticuida-77fac.web.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,

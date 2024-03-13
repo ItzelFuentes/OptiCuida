@@ -13,12 +13,16 @@ export class ProfesionalesComponent {
   loading = true;
   loader = true;
   errorLoading: boolean = false;
+  userRole: string | null = null;
+  isAdmin2 = false;
 
   ngOnInit(): void {
     this.obtenerPacientes();
     setTimeout(()=>{
       this.loader = false;
     }, 2000);
+    this.userRole = localStorage.getItem('userRole');
+    this.isAdmin();
   }
 
   constructor(private _pacienteService: PacienteServices,
@@ -39,6 +43,12 @@ export class ProfesionalesComponent {
     });
   }
   
+  isAdmin(){
+    if(this.userRole === "admin"){
+      this.isAdmin2 = true;
+      console.log(this.isAdmin2);
+    }
+  }
 
   getBufferImageSrc(buffer: ArrayBuffer): SafeUrl {
     const blob = new Blob([buffer]);

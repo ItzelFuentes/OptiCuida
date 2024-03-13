@@ -16,6 +16,7 @@ import Swal from 'sweetalert2';
 export class RegistrarPacientesComponent {
 
   pacienteForm: FormGroup;
+  loader = true;
   id: string | null;
   private fileTmp:any;
   fileTypes: { [key: string]: string } = {};
@@ -63,6 +64,9 @@ export class RegistrarPacientesComponent {
   ngOnInit(): void {
     this.obtenerPacientes();
     this.obtenerCiudades();
+    setTimeout(()=>{
+      this.loader = false;
+    }, 2000);
   }
 
   getFile($event: any, fieldName: string): void {
@@ -158,5 +162,7 @@ getSanitizedImageUrl(base64String: string, imageType: string): SafeUrl {
     })
     
   }
+
+  
 
 }

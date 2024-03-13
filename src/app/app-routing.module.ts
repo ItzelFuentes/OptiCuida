@@ -11,18 +11,23 @@ import { RoleGuard } from './components/complementos/RoleGuard';
 import { DeniedComponent } from './components/complementos/denied/denied.component';
 import { MapaComponent } from './components/vistas/mapa/mapa.component';
 import { NosotrosComponent } from './components/vistas/nosotros/nosotros.component';
+import { AvisoDePrivacidadComponent } from './components/complementos/aviso-de-privacidad/aviso-de-privacidad.component';
 
 const routes: Routes = [
-  {path: 'Inicio', component: IndexComponent},
-  {path: 'RegistrarPaciente', component: RegistrarPacientesComponent},
-  {path: 'VerProfesionales', canActivate: [RoleGuard], data: { 'expectedRoles': ['admin'] }, component: ProfesionalesComponent},
-  {path: 'Precios', component: PreciosComponent},
-  {path: 'Login', component: LoginComponent},
-  {path: 'Signup', component: SignupComponent},
-  {path: 'denied', component: DeniedComponent},
-  {path: 'Mapa', component: MapaComponent},
-  {path: 'Nosotros', component: NosotrosComponent},
-  {path: '**',component: NotFoundComponent}
+  {path: 'Inicio', component: IndexComponent, data: {
+    breadcrumb: 'Inicio'
+  }},
+  {path: 'RegistrarPaciente', canActivate: [RoleGuard], data: { 'expectedRoles': ['admin'], breadcrumb: 'Registro' }, component: RegistrarPacientesComponent},
+  {path: 'VerProfesionales', canActivate: [RoleGuard], data: { 'expectedRoles': ['regular','admin'], breadcrumb: 'Profesionales' }, component: ProfesionalesComponent},
+  {path: 'Precios', component: PreciosComponent, data: {breadcrumb: 'Inicio / Precios'}},
+  {path: 'Login', component: LoginComponent , data: {breadcrumb: 'Login'}},
+  {path: 'Signup', component: SignupComponent, data: {breadcrumb: 'Singup'}},
+  {path: 'Denegado', component: DeniedComponent, data: {breadcrumb: 'Inicio / Denegado'}},
+  {path: 'Mapa', component: MapaComponent, data: {breadcrumb: 'Inicio / Mapa'}},
+  {path: 'Nosotros', component: NosotrosComponent, data: {breadcrumb: 'Inicio / Nosotros'}},
+  {path: 'Policy',component: AvisoDePrivacidadComponent, data: {breadcrumb: 'Aviso de privacidad'}},
+  {path: '**',component: NotFoundComponent, data: {breadcrumb: ''}}
+  
 ];
 
 @NgModule({

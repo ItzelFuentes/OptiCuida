@@ -7,7 +7,7 @@ const port = process.env.PORT || 9000;
 const cors = require("cors");
 
 const corsOptions = {
-    origin: 'http://localhost:4200', // Reemplaza esto con la URL de tu aplicación Angular
+    origin: 'https://opticuida.onrender.com',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
